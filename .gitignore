@@ -1,6 +1,19 @@
 # Prerequisites
 *.d
 
+*~
+*#
+unit_test*
+libmy.a
+*.o
+*.out
+coding-style-reports.log
+settings.json
+.vscode/
+.vs/
+*gcno
+*gcda
+
 # Object files
 *.o
 *.ko
