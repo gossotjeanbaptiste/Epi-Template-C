@@ -14,6 +14,7 @@ SRC 	= 	my_compute_power_it.c 	\
 		my_getnbr.c 	\
 		my_is_prime.c 	\
 		my_isneg.c 	\
+		my_isprint.c 	\
 		my_printf_error_handler.c 	\
 		my_printf_handling.c 	\
 		my_printf_handle_flags_wiss.c 	\
@@ -34,6 +35,7 @@ SRC 	= 	my_compute_power_it.c 	\
 		my_put_size_t.c 	\
 		my_put_ssize_t.c 	\
 		my_putchar.c 	\
+		my_puthex.c 	\
 		my_putstr.c 	\
 		my_reverse_str.c 	\
 		my_revstr.c 	\

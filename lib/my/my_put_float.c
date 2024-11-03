@@ -5,6 +5,7 @@
 ** my_put_float
 */
 #include "my.h"
+
 int my_put_float(double nb, int precision)
 {
     int int_part = (int)nb;

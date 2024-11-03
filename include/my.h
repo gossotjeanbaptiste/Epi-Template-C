@@ -13,8 +13,11 @@
     #define MY_H
 void annexe_my_put_hex(int remainder, int is_upper, int nb, int res);
 void annexe_my_putn_hex(int remainder, int is_upper, int nb, int res);
+void annexe_to_my_sort_int_array(int integer1, int integer2);
 int annexe_to_my_strstr(char const *to_find, int size_find, char *str);
 int annexe_dos_to_my_strstr(char const *to_find, char *str, int i, int j);
+void annexe_to_my_showmem(int i, char const *str, int size);
+void annexe_to_my_showmem2(int i, char const *str, int size, char c);
 int my_putnbr_intmax(intmax_t num);
 int annexe_my_putnbr_intmax(intmax_t num, char *buffer, int i);
 int at_power(int n, int p);
@@ -26,12 +29,15 @@ int my_find_prime_sup(int nb);
 int my_getnbr(char const *str);
 void my_isneg(int n);
 int my_is_prime(int nb);
+int my_is_prime(int nb);
 void my_putchar(char c);
 int my_put_float(double nb, int precision);
 int second_my_put_float(int dec_part, double dec_multiplier, int precision,
     int current_precision);
 int my_put_nbr(int nb);
 int my_putn_nbr(int nb, int precision);
+void my_puthex2(unsigned char n);
+void my_puthex8(int n);
 int my_put_hex(unsigned int nb, int is_upper, int precision);
 int my_putn_hex(unsigned int nb, int is_upper, int precision);
 int my_putstr(char const *str);
