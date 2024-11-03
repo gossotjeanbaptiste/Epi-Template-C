@@ -9,6 +9,9 @@ NAME = libmy.a
 
 all: libmy.a
 
+start :
+		mv gitignore.txt .gitignore
+
 libmy.a:
 		cd lib/my && make
 		make clean
