@@ -98,8 +98,15 @@ int handle_float_f_fraction(int frac_part, char *frac_part_str);
 void handle_float_e(va_list args, char specifier);
 int handle_float_e_second(char sign, double num, int exponent, char e_char);
 int handle_pointer_p(va_list args);
+int mini_printf(const char *format, ...);
+void mini_printf_handle_string(const char *format, va_list args);
+void mini_printf_handle_integer(const char *format, va_list args);
+void mini_printf_handle_char(va_list args);
+void mini_printf_handle_default(char c);
+void mini_printf_verification_switch(const char *format, va_list args, int i);
 void mini_vprintf(const char *format, va_list args);
 int my_printf(const char *format, ...);
+void my_vprintf(const char *format, va_list args);
 int error_handler(const char *format, ...);
 int count_format_specifiers(const char *format);
 int count_arguments(va_list args, const char *format);
@@ -114,5 +121,4 @@ void verification_switch2(const char *format, va_list args, int i);
 void verification_switch3(const char *format, va_list args, int i);
 void verification_switch4(const char *format, va_list args, int i);
 void verification_switch5(const char *format, va_list args, int i);
-
 #endif /* !MY_H */

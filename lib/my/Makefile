@@ -5,7 +5,10 @@
 ## Makefile of lib/my
 ##
 
-SRC 	= 	my_compute_power_it.c 	\
+SRC 	= 	mini_printf.c 	\
+		mini_printf_verif_case.c 	\
+		mini_vprintf.c 	\
+		my_compute_power_it.c 	\
 		my_compute_power_rec.c 	\
 		my_compute_square_root.c 	\
 		my_convert_num_to_str.c 	\
@@ -25,6 +28,7 @@ SRC 	= 	my_compute_power_it.c 	\
 		my_printf_switch_base.c 	\
 		my_printf_verification_case1.c 		\
 		my_printf.c 	\
+		my_vprintf.c 	\
 		my_put_float.c 	\
 		my_put_long_double.c 	\
 		my_put_long_long.c 	\
