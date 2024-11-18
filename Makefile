@@ -7,7 +7,7 @@
 
 NAME = libmy.a
 
-all: libmy.a
+all: libmy.a compile
 
 start :
 		mv gitignore.txt .gitignore
@@ -16,6 +16,9 @@ libmy.a:
 		cd lib/my && make
 		make clean
 		echo "libmy.a has been compiled."
+
+compile:
+		gcc -o project *.c -I include/ -L ./ -lmy
 
 clean:
 		cd lib/my && make clean
@@ -55,5 +58,7 @@ tests_run:
 		gcovr --exclude tests/ --branches
 		make fclean
 
+segfault: all
+		gcc -o project -g *.c -I include/ -L ./ -lmy
 
 .PHONY: cs all clean fclean re
