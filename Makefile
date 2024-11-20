@@ -5,7 +5,8 @@
 ## compiles libmy
 ##
 
-NAME = libmy.a
+LIB = libmy.a
+PROJECT_NAME = project
 
 all: libmy.a compile
 
@@ -18,7 +19,7 @@ libmy.a:
 		echo "libmy.a has been compiled."
 
 compile:
-		gcc -o project *.c -I include/ -L ./ -lmy
+		gcc -o $(PROJECT_NAME) *.c -I include/ -L ./ -lmy
 
 clean:
 		cd lib/my && make clean
@@ -26,7 +27,7 @@ clean:
 
 fclean: clean
 		rm -f a.out
-		rm -f $(NAME)
+		rm -f $(LIB)
 		rm -f *~
 		rm -f lib/my/libmy.a
 		rm -f lib/my/*.o
@@ -59,6 +60,6 @@ tests_run:
 		make fclean
 
 segfault: all
-		gcc -o project -g *.c -I include/ -L ./ -lmy
+		gcc -o $(PROJECT_NAME) -g *.c -I include/ -L ./ -lmy
 
 .PHONY: cs all clean fclean re
