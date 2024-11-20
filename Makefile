@@ -28,6 +28,7 @@ clean:
 fclean: clean
 		rm -f a.out
 		rm -f $(LIB)
+		rm -f $(PROJECT_NAME)
 		rm -f *~
 		rm -f lib/my/libmy.a
 		rm -f lib/my/*.o
