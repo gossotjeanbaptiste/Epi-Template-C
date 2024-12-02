@@ -71,15 +71,6 @@ void from_base_10(int number, int base, char *result, int use_lowercase)
     }
 }
 
-static void swap_index(char *result, int index, int i)
-{
-    char temp;
-
-    temp = result[i];
-    result[i] = result[index - i - 1];
-    result[index - i - 1] = temp;
-}
-
 // Fonction principale pour convertir entre les bases spécifiées
 void convert_base(char *number, int base_from, int base_to, int use_lowercase)
 {
