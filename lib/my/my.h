@@ -122,5 +122,5 @@ void verification_switch3(const char *format, va_list args, int i);
 void verification_switch4(const char *format, va_list args, int i);
 void verification_switch5(const char *format, va_list args, int i);
 int my_show_word_array(char *const *tab);
-char **my_str_to_word_array(char const *str);
+char **my_str_to_word_array(char *str);
 #endif /* !MY_H */
