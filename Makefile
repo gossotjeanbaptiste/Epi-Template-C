@@ -19,7 +19,8 @@ libmy.a:
 		echo "libmy.a has been compiled."
 
 compile:
-		gcc -o $(PROJECT_NAME) *.c -I include/ -L ./ -lmy
+		gcc -o $(PROJECT_NAME) *.c -I include/ -L ./ -lmy \
+		-Wall -Wextra -Wunused -Wimplicit
 
 clean:
 		cd lib/my && make clean
