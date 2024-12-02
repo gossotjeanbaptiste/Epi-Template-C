@@ -7,6 +7,8 @@
 
 LIB = libmy.a
 PROJECT_NAME = project
+MY_LIB = -lmy
+FLAGS = -Wall -Wextra -Wunused -Wimplicit
 
 all: libmy.a compile
 
@@ -19,9 +21,7 @@ libmy.a:
 		echo "libmy.a has been compiled."
 
 compile:
-		gcc -o $(PROJECT_NAME) *.c -I include/ -L ./ -lmy \
-		-Wall -Wextra -Wunused -Wimplicit
-
+		gcc -o $(PROJECT_NAME) *.c -I include/ -L ./ $(MY_LIB) $(FLAGS)
 clean:
 		cd lib/my && make clean
 		rm -f *.o
