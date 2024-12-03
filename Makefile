@@ -6,7 +6,7 @@
 ##
 
 LIB = libmy.a
-PROJECT_NAME = project
+PROJECT_NAME = bsorganized
 MY_LIB = -lmy
 FLAGS = -Wall -Wextra -Wunused -Wimplicit
 
@@ -63,5 +63,8 @@ tests_run:
 
 segfault: all
 		gcc -o $(PROJECT_NAME) -g *.c -I include/ -L ./ -lmy
+
+printf:
+		grep -Rn printf
 
 .PHONY: cs all clean fclean re
