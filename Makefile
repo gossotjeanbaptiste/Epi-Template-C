@@ -21,7 +21,7 @@ libmy.a:
 		echo "libmy.a has been compiled."
 
 compile:
-		gcc -o $(PROJECT_NAME) *.c -I include/ -L ./ $(MY_LIB) $(FLAGS)
+		gcc -o $(PROJECT_NAME) *.c src/*.c -I include/ -L ./ $(MY_LIB) $(FLAGS)
 clean:
 		cd lib/my && make clean
 		rm -f *.o
@@ -62,7 +62,8 @@ tests_run:
 		make fclean
 
 segfault: all
-		gcc -o $(PROJECT_NAME) -g *.c -I include/ -L ./ -lmy
+		gcc -o $(PROJECT_NAME) -g *.c src/*.c -I include/ -L ./ $(MY_LIB) \
+		$(FLAGS)
 
 printf:
 		grep -Rn printf
