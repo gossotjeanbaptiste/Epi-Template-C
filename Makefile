@@ -6,7 +6,7 @@
 ##
 
 LIB = libmy.a
-PROJECT_NAME = bsorganized
+PROJECT_NAME = project
 MY_LIB = -lmy
 FLAGS = -Wall -Wextra -Wunused -Wimplicit
 
