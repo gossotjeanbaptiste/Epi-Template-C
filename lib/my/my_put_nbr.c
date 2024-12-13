@@ -20,8 +20,8 @@ int my_put_nbr(int nb)
     my_putchar(nb % 10 + '0');
     if (neg == 1) {
         my_putchar('-');
-    return 0;
     }
+    return 0;
 }
 
 int my_putn_nbr(int nb, int precision)

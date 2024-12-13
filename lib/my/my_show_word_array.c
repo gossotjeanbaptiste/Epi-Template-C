@@ -6,11 +6,12 @@
 */
 #include "my.h"
 
-int my_show_word_array(char *const *tab)
+
+void my_show_word_array(char *words[])
 {
-    for (int i = 0; tab[i] != 0; i++) {
-        my_putstr(tab[i]);
-        my_putchar('\n');
+    int size = sizeof(words) / sizeof(words[0]);
+
+    for (int i = 0; i < size; i++) {
+        mini_printf("%s\n", words[i]);
     }
-    return 0;
 }

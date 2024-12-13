@@ -7,14 +7,14 @@
 #include <stdlib.h>
 #include "my.h"
 
-char *my_strdup(char const *src)
+char *my_strdup(const char *str)
 {
-    int len_src = my_strlen(src);
-    char *str = malloc(sizeof(char) * (len_src + 1));
+    size_t len = my_strlen(str) + 1;
+    char *new_str = (char *)malloc(len);
 
-    for (int i = 0; i < len_src; i++) {
-        str[i] = src[i];
+    if (new_str == NULL) {
+        return NULL;
     }
-    str[len_src] = '\0';
-    return str;
+    my_strcpy(new_str, str);
+    return new_str;
 }

@@ -8,6 +8,7 @@
 SRC 	= 	mini_printf.c 	\
 		mini_printf_verif_case.c 	\
 		mini_vprintf.c 	\
+		mini_printf_handle_pointer_p.c 	\
 		my_compute_power_it.c 	\
 		my_compute_power_rec.c 	\
 		my_compute_square_root.c 	\
