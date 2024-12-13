@@ -99,6 +99,7 @@ void handle_float_e(va_list args, char specifier);
 int handle_float_e_second(char sign, double num, int exponent, char e_char);
 int handle_pointer_p(va_list args);
 int mini_printf(const char *format, ...);
+int mini_printf_handle_pointer_p(va_list args);
 void mini_printf_handle_string(const char *format, va_list args);
 void mini_printf_handle_integer(const char *format, va_list args);
 void mini_printf_handle_char(va_list args);
@@ -121,6 +122,6 @@ void verification_switch2(const char *format, va_list args, int i);
 void verification_switch3(const char *format, va_list args, int i);
 void verification_switch4(const char *format, va_list args, int i);
 void verification_switch5(const char *format, va_list args, int i);
-int my_show_word_array(char *const *tab);
+void my_show_word_array(char *words[]);
 char **my_str_to_word_array(char *str);
 #endif /* !MY_H */
