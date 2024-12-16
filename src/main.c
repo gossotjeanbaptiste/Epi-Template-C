@@ -4,6 +4,7 @@
 ** File description:
 ** Main for Epi-Template-C
 */
+#include "../include/my.h"
 
 int main(void)
 {
