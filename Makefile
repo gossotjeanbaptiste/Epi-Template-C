@@ -9,6 +9,9 @@ LIB = libmy.a
 PROJECT_NAME = project
 MY_LIB = -lmy
 FLAGS = -Wall -Wextra -Wunused -Wimplicit
+SRC = $(wildcard *.c) $(wildcard src/*.c)
+INCL = -I include/
+LIB_COMP = -L ./ $(MY_LIB)
 
 all: libmy.a compile
 
@@ -21,7 +24,7 @@ libmy.a:
 		echo "libmy.a has been compiled."
 
 compile:
-		gcc -o $(PROJECT_NAME) *.c src/*.c -I include/ -L ./ $(MY_LIB) $(FLAGS)
+		gcc -o $(PROJECT_NAME) $(SRC) $(INCL) $(LIB_COMP) $(FLAGS)
 clean:
 		cd lib/my && make clean
 		rm -f *.o
@@ -62,8 +65,7 @@ tests_run:
 		make fclean
 
 segfault: all
-		gcc -o $(PROJECT_NAME) -g *.c src/*.c -I include/ -L ./ $(MY_LIB) \
-		$(FLAGS)
+		gcc -o $(PROJECT_NAME) -g $(SRC) $(INCL) $(LIB_COMP) $(FLAGS)
 
 printf:
 		grep -Rn printf
