@@ -8,9 +8,15 @@
 #include <unistd.h>
 #include <inttypes.h>
 #include <stdarg.h>
+#include <stdlib.h>
 
 #ifndef MY_H
     #define MY_H
+void free_word_array(char **array);
+int is_delimiter(char c, const char *delim);
+char *find_token_end(char *str, const char *delim);
+int my_atoi(const char *str);
+int number_word(char *str);
 void annexe_my_put_hex(int remainder, int is_upper, int nb, int res);
 void annexe_my_putn_hex(int remainder, int is_upper, int nb, int res);
 void annexe_to_my_sort_int_array(int integer1, int integer2);
@@ -99,7 +105,6 @@ void handle_float_e(va_list args, char specifier);
 int handle_float_e_second(char sign, double num, int exponent, char e_char);
 int handle_pointer_p(va_list args);
 int mini_printf(const char *format, ...);
-int mini_printf_handle_pointer_p(va_list args);
 void mini_printf_handle_string(const char *format, va_list args);
 void mini_printf_handle_integer(const char *format, va_list args);
 void mini_printf_handle_char(va_list args);
@@ -122,6 +127,8 @@ void verification_switch2(const char *format, va_list args, int i);
 void verification_switch3(const char *format, va_list args, int i);
 void verification_switch4(const char *format, va_list args, int i);
 void verification_switch5(const char *format, va_list args, int i);
-void my_show_word_array(char *words[]);
+int my_show_word_array(char *const *tab);
 char **my_str_to_word_array(char *str);
+char *my_strtok(char *str, const char *delim);
+int mini_printf_handle_pointer_p(va_list args);
 #endif /* !MY_H */

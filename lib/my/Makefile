@@ -8,7 +8,6 @@
 SRC 	= 	mini_printf.c 	\
 		mini_printf_verif_case.c 	\
 		mini_vprintf.c 	\
-		mini_printf_handle_pointer_p.c 	\
 		my_compute_power_it.c 	\
 		my_compute_power_rec.c 	\
 		my_compute_square_root.c 	\
@@ -67,7 +66,11 @@ SRC 	= 	mini_printf.c 	\
 		my_swap.c 	\
 		swap_index.c 	\
 		my_str_to_word_array.c 	\
-		my_show_word_array.c
+		my_show_word_array.c 	\
+		my_strtok.c 	\
+		my_atoi.c 	\
+		mini_printf_handle_pointer_p.c 	\
+		free_word_array.c
 
 OBJ	=	$(SRC:.c=.o)
 
