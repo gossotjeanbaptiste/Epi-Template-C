@@ -81,6 +81,3 @@ $(NAME):	$(OBJ)
 	mv $(NAME) ../../
 	cp my.h ../../include/
 	rm -f $(OBJ)
-
-clean:
-	rm -f $(OBJ)

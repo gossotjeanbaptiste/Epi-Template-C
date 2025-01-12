@@ -13,6 +13,7 @@ settings.json
 .vs/
 *gcno
 *gcda
+secured
 
 # Object files
 *.o

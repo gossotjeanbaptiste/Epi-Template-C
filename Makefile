@@ -6,7 +6,7 @@
 ##
 
 LIB = libmy.a
-PROJECT_NAME = project
+PROJECT_NAME = secured
 MY_LIB = -lmy
 FLAGS = -Wall -Wextra -Wunused -Wimplicit
 SRC = $(wildcard *.c) $(wildcard src/*.c)
@@ -21,7 +21,6 @@ start :
 
 libmy.a:
 		cd lib/my && make
-		make clean
 		echo "libmy.a has been compiled."
 
 compile:
@@ -51,6 +50,7 @@ new libmy and compilation"
 re: fclean all
 
 cs: fclean
+		clear
 		coding-style . .
 		cat coding-style-reports.log
 		rm -f coding-style-reports.log
