@@ -17,6 +17,7 @@ all: libmy.a compile
 
 start :
 		mv gitignore.txt .gitignore
+		mv src/project.c src/$(PROJECT_NAME).c
 
 libmy.a:
 		cd lib/my && make
@@ -34,6 +35,7 @@ fclean: clean
 		rm -f $(LIB)
 		rm -f $(PROJECT_NAME)
 		rm -f *~
+		rm -f src/*~
 		rm -f lib/my/libmy.a
 		rm -f lib/my/*.o
 		rm -f lib/my/*~
@@ -42,6 +44,7 @@ fclean: clean
 		rm -f *.gcda
 		rm -f unit_tests
 		rm -f *.out
+		rm -f *#
 		echo "Everything has been cleaned, do make for have a \
 new libmy and compilation"
 
