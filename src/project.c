@@ -2,10 +2,10 @@
 ** EPITECH PROJECT, 2025
 ** Epi-Template-C
 ** File description:
-** secured
+** project
 */
 
-void secured(void)
+void project(void)
 {
     return;
 }

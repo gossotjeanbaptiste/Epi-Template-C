@@ -5,9 +5,9 @@
 ## compiles libmy
 ##
 
-LIB = libmy.a 
-PROJECT_NAME = secured
-MY_LIB = -lmy -lhashtable
+LIB = libmy.a
+PROJECT_NAME = project
+MY_LIB = -lmy
 FLAGS = -Wall -Wextra -Wunused -Wimplicit
 SRC = $(wildcard *.c) $(wildcard src/*.c)
 INCL = -I include/
@@ -20,14 +20,14 @@ start :
 		mv src/project.c src/$(PROJECT_NAME).c
 
 libmy.a:
-		cd lib/my && make && cd .. && cd hashtable && make
+		cd lib/my && make
+		make clean
 		echo "libmy.a has been compiled."
 
 compile:
 		gcc -o $(PROJECT_NAME) $(SRC) $(INCL) $(LIB_COMP) $(FLAGS)
-
 clean:
-		cd lib/my && make clean && cd ../hashtable && make clean
+		cd lib/my && make clean
 		rm -f *.o
 
 fclean: clean
@@ -51,7 +51,6 @@ new libmy and compilation"
 re: fclean all
 
 cs: fclean
-		clear
 		coding-style . .
 		cat coding-style-reports.log
 		rm -f coding-style-reports.log
