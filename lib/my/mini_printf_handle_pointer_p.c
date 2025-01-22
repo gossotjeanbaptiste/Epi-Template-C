@@ -20,3 +20,9 @@ int mini_printf_handle_pointer_p(va_list args)
     printed_chars += my_put_hex((unsigned int)address, 0, 0);
     return printed_chars;
 }
+
+void mini_printf_handle_long(va_list args)
+{
+    long i = va_arg(args, long);
+    my_put_long(i);
+}

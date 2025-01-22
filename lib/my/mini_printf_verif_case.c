@@ -50,6 +50,9 @@ void mini_printf_verification_switch(const char *format, va_list args, int i)
     case 'p':
         mini_printf_handle_pointer_p(args);
         break;
+    case 'l':
+        mini_printf_handle_long(args);
+        break;
     default:
         mini_printf_handle_default(format[i]);
         break;

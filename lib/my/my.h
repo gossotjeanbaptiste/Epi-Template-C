@@ -109,6 +109,7 @@ void mini_printf_handle_string(const char *format, va_list args);
 void mini_printf_handle_integer(const char *format, va_list args);
 void mini_printf_handle_char(va_list args);
 void mini_printf_handle_default(char c);
+void mini_printf_handle_long(va_list args);
 void mini_printf_verification_switch(const char *format, va_list args, int i);
 void mini_vprintf(const char *format, va_list args);
 int my_printf(const char *format, ...);
