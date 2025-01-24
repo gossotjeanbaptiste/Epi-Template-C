@@ -24,5 +24,6 @@ int mini_printf_handle_pointer_p(va_list args)
 void mini_printf_handle_long(va_list args)
 {
     long i = va_arg(args, long);
+
     my_put_long(i);
 }

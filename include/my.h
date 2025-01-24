@@ -12,6 +12,8 @@
 
 #ifndef MY_H
     #define MY_H
+char **allocate_tab(char *str);
+void put_in_array(char *str, char **tab, int k);
 void free_word_array(char **array);
 int is_delimiter(char c, const char *delim);
 char *find_token_end(char *str, const char *delim);

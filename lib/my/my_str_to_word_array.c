@@ -20,26 +20,47 @@ int number_word(char *str)
     return (count);
 }
 
-char **my_str_to_word_array(char *str)
+char **allocate_tab(char *str)
 {
     char **tab = malloc(sizeof(char *) * (number_word(str) + 1));
+
+    if (!tab)
+        return NULL;
+    for (int i = 0; i < number_word(str); i++) {
+        tab[i] = malloc(sizeof(char) * (my_strlen(str) + 1));
+        if (!tab[i])
+            return NULL;
+    }
+    return tab;
+}
+
+void put_in_array(char *str, char **tab, int k)
+{
     int j = 0;
     int i = 0;
-    int k = 0;
 
     while (str[i] != '\0') {
-        tab[k] = malloc(sizeof(char) * (my_strlen(str) + 1));
         while (str[i] == ' ' || str[i] == '\t')
             i++;
         j = 0;
         while (str[i] != ' ' && str[i] != '\t' && str[i] != '\0') {
-            tab[k][j] = str[i];
             i++;
             j++;
+            tab[k][j] = str[i];
         }
-        tab[k][j] = '\0';
         k++;
+        tab[k][j] = '\0';
     }
+}
+
+char **my_str_to_word_array(char *str)
+{
+    char **tab = allocate_tab(str);
+    int k = 0;
+
+    if (!tab)
+        return NULL;
+    put_in_array(str, tab, k);
     tab[k] = NULL;
-    return (tab);
+    return tab;
 }
