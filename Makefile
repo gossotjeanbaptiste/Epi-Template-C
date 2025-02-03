@@ -72,7 +72,7 @@ tests_run:
 		make fclean
 
 segfault: all $(OBJ)
-		gcc -o $(PROJECT_NAME) -g $(OBJ) $(INCL) $(LIB_COMP) $(FLAGS)
+		gcc -o $(PROJECT_NAME) -g $(OBJ) $(INCL) $(LIB_COMP) $(FLAGS) -O3
 
 printf:
 		grep -Rn printf
