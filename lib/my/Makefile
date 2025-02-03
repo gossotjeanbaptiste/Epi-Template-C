@@ -70,7 +70,8 @@ SRC 	= 	mini_printf.c 	\
 		my_strtok.c 	\
 		my_atoi.c 	\
 		mini_printf_handle_pointer_p.c 	\
-		free_word_array.c
+		free_word_array.c 	\
+		randint.c
 
 OBJ	=	$(SRC:.c=.o)
 

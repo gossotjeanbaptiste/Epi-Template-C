@@ -9,9 +9,13 @@
 #include <inttypes.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #ifndef MY_H
     #define MY_H
+int randint(int min, int max);
 char **allocate_tab(char *str);
 void put_in_array(char *str, char **tab, int k);
 void free_word_array(char **array);
