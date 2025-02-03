@@ -10,6 +10,7 @@ PROJECT_NAME = project
 MY_LIB = -lmy
 FLAGS = -Wall -Wextra -Wunused -Wimplicit
 SRC = $(wildcard *.c) $(wildcard src/*.c)
+OBJ = $(SRC:.c=.o)
 INCL = -I include/
 LIB_COMP = -L ./ $(MY_LIB)
 
@@ -21,14 +22,14 @@ start :
 
 libmy.a:
 		cd lib/my && make
-		make clean
-		echo "libmy.a has been compiled."
+		@echo "libmy.a has been compiled."
 
-compile:
-		gcc -o $(PROJECT_NAME) $(SRC) $(INCL) $(LIB_COMP) $(FLAGS)
+compile: $(OBJ)
+		gcc -o $(PROJECT_NAME) $(OBJ) $(INCL) $(LIB_COMP) $(FLAGS)
+
 clean:
 		cd lib/my && make clean
-		rm -f *.o
+		rm -f $(OBJ)
 
 fclean: clean
 		rm -f a.out
@@ -45,12 +46,15 @@ fclean: clean
 		rm -f unit_tests
 		rm -f *.out
 		rm -f *#
-		echo "Everything has been cleaned, do make for have a \
+		@echo "Everything has been cleaned, do make for have a \
 new libmy and compilation"
 
 re: fclean all
 
 cs: fclean
+		clear
+		@echo "Everything has been cleaned, do make for have a \
+new libmy and compilation"
 		coding-style . .
 		cat coding-style-reports.log
 		rm -f coding-style-reports.log
@@ -67,8 +71,8 @@ tests_run:
 		gcovr --exclude tests/ --branches
 		make fclean
 
-segfault: all
-		gcc -o $(PROJECT_NAME) -g $(SRC) $(INCL) $(LIB_COMP) $(FLAGS)
+segfault: all $(OBJ)
+		gcc -o $(PROJECT_NAME) -g $(OBJ) $(INCL) $(LIB_COMP) $(FLAGS)
 
 printf:
 		grep -Rn printf
