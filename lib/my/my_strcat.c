@@ -1,9 +1,10 @@
 /*
 ** EPITECH PROJECT, 2024
-** my_strcat
+** libmy
 ** File description:
-** concatenates two strings
+** Concatenate a string to another string
 */
+
 #include "my.h"
 
 char *my_strcat(char *dest, char const *src)
@@ -15,8 +16,9 @@ char *my_strcat(char *dest, char const *src)
         a++;
     }
     while (src[b] != '\0') {
-        dest[a] = src[b];
+        dest[a + b] = src[b];
         b++;
     }
+    dest[a + b] = '\0';
     return dest;
 }
