@@ -6,16 +6,20 @@
 */
 #include "my.h"
 
-int my_strcmp(const char *s1, const char *s2)
+int my_strcmp(char const *s1, char const *s2)
 {
-    int len_s1 = my_strlen(s1);
-    int len_s2 = my_strlen(s2);
+    int i;
+    char cmp;
 
-    if (len_s1 == len_s2)
-        return 0;
-    if (len_s1 < len_s2)
+    for (i = 0; s1[i] != '\0' && s2[i] != '\0'; i++) {
+        if (s1[i] != s2[i]) {
+            cmp = (char)((unsigned char)s1[i] - (unsigned char)s2[i]);
+            return (cmp > 0) * 2 - 1;
+        }
+    }
+    if (s1[i] == '\0' && s2[i] != '\0')
         return -1;
-    if (len_s1 > len_s2)
+    if (s1[i] != '\0' && s2[i] == '\0')
         return 1;
-    return 0;
+    return (0);
 }
