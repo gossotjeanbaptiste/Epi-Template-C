@@ -53,7 +53,8 @@ re: fclean all
 
 cs: fclean
 		clear
-		@echo "Everything has been cleaned, do make for have a \
+		@echo "All none compliant file for coding style \
+has been cleaned, do make for have a \
 new libmy and compilation"
 		coding-style . .
 		cat coding-style-reports.log
