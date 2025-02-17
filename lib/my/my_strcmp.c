@@ -8,18 +8,9 @@
 
 int my_strcmp(char const *s1, char const *s2)
 {
-    int i;
-    char cmp;
-
-    for (i = 0; s1[i] != '\0' && s2[i] != '\0'; i++) {
-        if (s1[i] != s2[i]) {
-            cmp = (char)((unsigned char)s1[i] - (unsigned char)s2[i]);
-            return (cmp > 0) * 2 - 1;
-        }
+    while (*s1 && (*s1 == *s2)) {
+        s1++;
+        s2++;
     }
-    if (s1[i] == '\0' && s2[i] != '\0')
-        return -1;
-    if (s1[i] != '\0' && s2[i] == '\0')
-        return 1;
-    return (0);
+    return (unsigned char)*s1 - (unsigned char)*s2;
 }
