@@ -66,6 +66,7 @@ char *my_revstr(char *str);
 int my_showmem(char const *str, int size);
 int my_showstr(char const *str);
 int my_sort_int_array(int *tab, int size);
+char *my_strchr(const char *str, int c);
 char *my_strcapitalize(char *str);
 char *my_strcat(char *dest, char const *src);
 int my_strcmp(const char *s1, const char *s2);
