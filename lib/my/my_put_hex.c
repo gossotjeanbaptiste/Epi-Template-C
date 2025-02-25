@@ -1,11 +1,26 @@
 /*
-** EPITECH PROJECT, 2024
-** B-CPE-101-NCY-1-1-myprintf-jean-baptiste.gossot
+** EPITECH PROJECT, 2025
+** Epi-Template-C
 ** File description:
-** my_printf_handle_precision2
+** my_put_hex
 */
-#include <stdarg.h>
+
 #include "my.h"
+
+
+static void annexe_my_put_hex(int remainder, int is_upper, int nb, int res)
+{
+    char digit;
+
+    remainder = nb % 16;
+    if (remainder > 9) {
+        digit = remainder + (is_upper ? 'A' - 10 : 'a' - 10);
+    } else {
+        digit = remainder + '0';
+    }
+    my_putchar(digit);
+    res += 1;
+}
 
 int my_put_hex(unsigned int nb, int is_upper, int precision)
 {
@@ -27,18 +42,4 @@ int my_put_hex(unsigned int nb, int is_upper, int precision)
         annexe_my_put_hex(remainder, is_upper, nb, res);
     }
     return res;
-}
-
-void annexe_my_put_hex(int remainder, int is_upper, int nb, int res)
-{
-    char digit;
-
-    remainder = nb % 16;
-    if (remainder > 9) {
-        digit = remainder + (is_upper ? 'A' - 10 : 'a' - 10);
-    } else {
-        digit = remainder + '0';
-    }
-    my_putchar(digit);
-    res += 1;
 }

@@ -6,6 +6,18 @@
 */
 #include "my.h"
 
+static int for_my_convert_num_to_str(int i, char *str)
+{
+    char temp;
+
+    for (int j = 0; j < i / 2; j++) {
+        temp = str[j];
+        str[j] = str[i - j - 1];
+        str[i - j - 1] = temp;
+    }
+    return i;
+}
+
 int my_convert_num_to_str(unsigned int num, char *str)
 {
     int i = 0;
@@ -25,16 +37,4 @@ int my_convert_num_to_str(unsigned int num, char *str)
     }
     str[i] = '\0';
     for_my_convert_num_to_str(i, str);
-}
-
-int for_my_convert_num_to_str(int i, char *str)
-{
-    char temp;
-
-    for (int j = 0; j < i / 2; j++) {
-        temp = str[j];
-        str[j] = str[i - j - 1];
-        str[i - j - 1] = temp;
-    }
-    return i;
 }

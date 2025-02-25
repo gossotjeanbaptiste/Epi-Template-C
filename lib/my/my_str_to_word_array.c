@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-int number_word(char *str)
+static int number_word(char *str)
 {
     int count = 0;
 
@@ -20,7 +20,7 @@ int number_word(char *str)
     return (count);
 }
 
-char **allocate_tab(char *str)
+static char **allocate_tab(char *str)
 {
     char **tab = malloc(sizeof(char *) * (number_word(str) + 1));
 
@@ -34,7 +34,7 @@ char **allocate_tab(char *str)
     return tab;
 }
 
-void put_in_array(char *str, char **tab, int k)
+static void put_in_array(char *str, char **tab, int k)
 {
     int j = 0;
     int i = 0;

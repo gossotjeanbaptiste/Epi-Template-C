@@ -6,18 +6,18 @@
 */
 #include "my.h"
 
-char *my_strncat(char *dest, char const *src, int nb)
+char *my_strncat(char *dest, char const *src, int n)
 {
-    int i = 0;
-    int j = 0;
+    int a = 0;
+    int b = 0;
 
-    while (dest[i] != '\0')
-        i++;
-    while (src[j] != '\0' && j < nb) {
-        dest[i] = src[j];
-        i++;
-        j++;
+    while (dest[a] != '\0') {
+        a++;
     }
-    dest[i] = '\0';
-    return (dest);
+    while (src[b] != '\0' && b < n) {
+        dest[a + b] = src[b];
+        b++;
+    }
+    dest[a + b] = '\0';
+    return dest;
 }

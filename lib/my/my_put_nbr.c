@@ -23,21 +23,3 @@ int my_put_nbr(int nb)
     }
     return 0;
 }
-
-int my_putn_nbr(int nb, int precision)
-{
-    int neg = 0;
-
-    if (nb < 0) {
-        neg = 1;
-        nb = -nb;
-    }
-    if (nb >= 10) {
-        my_putn_nbr(nb / 10, precision);
-    }
-    my_putchar(nb % 10 + '0');
-    if (neg == 1) {
-        my_putchar('-');
-    }
-    return 0;
-}

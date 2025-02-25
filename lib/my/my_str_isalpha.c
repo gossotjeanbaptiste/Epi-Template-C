@@ -6,13 +6,6 @@
 */
 #include "my.h"
 
-int is_empty(char const *str)
-{
-    if (str[0] == '\0')
-        return 1;
-    return 84;
-}
-
 int my_str_isalpha(char const *str)
 {
     int i = 0;

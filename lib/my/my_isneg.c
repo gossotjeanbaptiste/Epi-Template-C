@@ -8,11 +8,8 @@
 
 void my_isneg(int n)
 {
-    if (n < 0){
-        my_putchar('N');
-        my_putchar('\n');
-    } else {
-        my_putchar('P');
-        my_putchar('\n');
-    }
+    if (n < 0)
+        mini_printf("N\n");
+    else
+        mini_printf("P\n");
 }

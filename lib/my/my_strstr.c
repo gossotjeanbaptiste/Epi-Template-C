@@ -6,17 +6,18 @@
 */
 #include "my.h"
 
-int annexe_dos_to_my_strstr(char const *to_find, char *str, int i, int j)
+static int annexe_dos_to_my_strstr
+(char const *to_find, char *str, int i, int j)
 {
     int found;
 
-    if (str[i + j] != to_find[j]) {
+    if (str[i + j] != to_find[j])
         found = 0;
-    }
     return found;
 }
 
-int annexe_to_my_strstr(char const *to_find, int size_find, char *str)
+static int annexe_to_my_strstr
+(char const *to_find, int size_find, char *str)
 {
     int found;
     int size_str = my_strlen(str);

@@ -7,7 +7,7 @@
 #include "my.h"
 
 // Fonction pour vérifier si un caractère est un délimiteur
-int is_delimiter(char c, const char *delim)
+static int is_delimiter(char c, const char *delim)
 {
     for (int i = 0; delim[i] != '\0'; ++i) {
         if (c == delim[i]) {
@@ -18,7 +18,7 @@ int is_delimiter(char c, const char *delim)
 }
 
 // Fonction pour trouver la fin d'un token
-char *find_token_end(char *str, const char *delim)
+static char *find_token_end(char *str, const char *delim)
 {
     while (*str != '\0' && is_delimiter(*str, delim)) {
         str++;

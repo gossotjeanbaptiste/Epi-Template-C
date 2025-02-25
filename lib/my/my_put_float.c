@@ -6,6 +6,19 @@
 */
 #include "my.h"
 
+static int second_my_put_float(int dec_part, double dec_multiplier,
+    int precision, int current_precision)
+{
+    int temp = dec_part;
+
+    while (temp < (int)dec_multiplier / 10 && current_precision < precision) {
+        my_putchar('0');
+        temp *= 10;
+        current_precision++;
+    }
+    my_put_nbr(dec_part);
+}
+
 int my_put_float(double nb, int precision)
 {
     int int_part = (int)nb;
@@ -25,17 +38,4 @@ int my_put_float(double nb, int precision)
     second_my_put_float(dec_part, dec_multiplier, precision,
         current_precision);
     return 0;
-}
-
-int second_my_put_float(int dec_part, double dec_multiplier, int precision,
-    int current_precision)
-{
-    int temp = dec_part;
-
-    while (temp < (int)dec_multiplier / 10 && current_precision < precision) {
-        my_putchar('0');
-        temp *= 10;
-        current_precision++;
-    }
-    my_put_nbr(dec_part);
 }

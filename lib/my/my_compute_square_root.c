@@ -9,8 +9,8 @@
 int my_compute_square_root(int nb)
 {
     int resultat = 0;
-    int i;
-    int add;
+    int i = 0;
+    int add = 0;
 
     for (i = 1; resultat < nb; i++) {
         add = 2 * i - 1;

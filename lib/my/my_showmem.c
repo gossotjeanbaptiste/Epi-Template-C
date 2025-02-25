@@ -5,12 +5,28 @@
 ** show memory
 */
 #include "my.h"
-#include <ctype.h>
-#include <unistd.h>
 
+static void my_puthex2(unsigned char n)
+{
+    char hex_digits[] = "0123456789abcdef";
+    char hex[2] = {hex_digits[(n >> 4) & 0xF], hex_digits[n & 0xF]};
 
+    my_putstr(hex);
+}
 
-void annexe_to_my_showmem3(int i, char const *str, int size, char c)
+static void my_puthex8(int n)
+{
+    char hex_digits[] = "0123456789abcdef";
+    char hex[8];
+
+    for (int i = 7; i >= 0; i--) {
+        hex[i] = hex_digits[n & 0xF];
+        n >>= 4;
+    }
+    my_putstr(hex);
+}
+
+static void annexe_to_my_showmem3(int i, char const *str, int size, char c)
 {
     for (int j = 0; j < 16; j++) {
         if (i + j < size) {
@@ -22,7 +38,7 @@ void annexe_to_my_showmem3(int i, char const *str, int size, char c)
     }
 }
 
-void annexe_to_my_showmem2(int i, char const *str, int size, char c)
+static void annexe_to_my_showmem2(int i, char const *str, int size, char c)
 {
     if (isprint((unsigned char)c)) {
         my_putchar(c);
@@ -31,7 +47,7 @@ void annexe_to_my_showmem2(int i, char const *str, int size, char c)
     }
 }
 
-void annexe_to_my_showmem(int i, char const *str, int size)
+static void annexe_to_my_showmem(int i, char const *str, int size)
 {
     char c = str[i];
 

@@ -6,7 +6,7 @@
 */
 #include "my.h"
 
-void annexe_to_my_sort_int_array(int integer1, int integer2)
+static void annexe_to_my_sort_int_array(int integer1, int integer2)
 {
     if (integer1 > integer2) {
         my_swap(&integer1, &integer2);
