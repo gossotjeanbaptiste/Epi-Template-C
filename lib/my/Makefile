@@ -22,6 +22,7 @@ SRC 	= 	free_word_array.c 	\
 		my_isprint.c 	\
 		my_putchar.c 	\
 		my_put_float.c 	\
+		my_put_hex.c 	\
 		my_put_long.c 	\
 		my_put_long_double.c 	\
 		my_put_long_long.c 	\
