@@ -67,6 +67,7 @@ void my_swap_char(char *a, char *b);
 void my_reverse_str(char *str, int len);
 int my_convert_num_to_str(unsigned int num, char *str);
 double my_fabs(double num);
+char *my_fgets(char *buffer, int n, FILE *stream);
 int mini_printf(const char *format, ...);
 void mini_printf_verification_switch(const char *format, va_list args, int i);
 void mini_vprintf(const char *format, va_list args);

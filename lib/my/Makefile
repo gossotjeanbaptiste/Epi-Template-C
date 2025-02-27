@@ -15,6 +15,7 @@ SRC 	= 	free_word_array.c 	\
 		my_compute_square_root.c 	\
 		my_convert_num_to_str.c 	\
 		my_fabs.c 	\
+		my_fgets.c 	\
 		my_find_prime_sup.c 	\
 		my_getnbr.c 	\
 		my_isneg.c 	\
@@ -66,6 +67,6 @@ NAME	=	libmy.a
 
 $(NAME):	$(OBJ)
 	ar rc $(NAME) $(OBJ)
-
+	cp my.h ./../../include/
 clean:
 	rm -f $(OBJ)
