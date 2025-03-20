@@ -26,7 +26,7 @@ static void my_puthex8(int n)
     my_putstr(hex);
 }
 
-static void annexe_to_my_showmem3(int i, char const *str, int size, char c)
+static void annexe_to_my_showmem3(int i, char const *str, int size)
 {
     for (int j = 0; j < 16; j++) {
         if (i + j < size) {
@@ -38,7 +38,7 @@ static void annexe_to_my_showmem3(int i, char const *str, int size, char c)
     }
 }
 
-static void annexe_to_my_showmem2(int i, char const *str, int size, char c)
+static void annexe_to_my_showmem2(char c)
 {
     if (isprint((unsigned char)c)) {
         my_putchar(c);
@@ -54,7 +54,7 @@ static void annexe_to_my_showmem(int i, char const *str, int size)
     for (int j = 0; j < 16; j++) {
         if (i + j < size) {
             c = str[i + j];
-            annexe_to_my_showmem2(i, str, size, c);
+            annexe_to_my_showmem2(c);
         } else {
             my_putstr(" ");
         }
@@ -66,7 +66,7 @@ int my_showmem(char const *str, int size)
     for (int i = 0; i < size; i += 16) {
         my_puthex8(i);
         my_putstr(": ");
-        annexe_to_my_showmem3(i, str, size, str[i]);
+        annexe_to_my_showmem3(i, str, size);
         my_putstr(" ");
         annexe_to_my_showmem(i, str, size);
         my_putstr("\n");

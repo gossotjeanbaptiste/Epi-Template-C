@@ -6,7 +6,7 @@
 */
 #include "my.h"
 
-static int second_my_put_float(int dec_part, double dec_multiplier,
+static void second_my_put_float(int dec_part, double dec_multiplier,
     int precision, int current_precision)
 {
     int temp = dec_part;
@@ -26,7 +26,6 @@ int my_put_float(double nb, int precision)
     double dec_multiplier = 1.0;
     int current_precision = 0;
     int dec_part = 0;
-    int temp = 0;
 
     for (int i = 0; i < precision; i++) {
         dec_multiplier *= 10.0;

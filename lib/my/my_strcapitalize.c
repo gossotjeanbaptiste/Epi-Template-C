@@ -12,7 +12,7 @@ char *my_strcapitalize(char *str)
 
     str[0] -= 32;
     while (str[i] != '\0') {
-        if (str[i - 1] == ' ' && str[i] >= 'a' || str[i] <= 'z')
+        if ((str[i - 1] == ' ' && str[i] >= 'a') || str[i] <= 'z')
             str[i] -= 32;
         i++;
     }

@@ -9,10 +9,14 @@
 
 int my_put_size_t(size_t nb)
 {
+    int count = 0;
+
     if (nb >= 10) {
-        my_put_size_t(nb / 10);
-        my_put_size_t(nb % 10);
+        count += my_put_size_t(nb / 10);
+        count += my_put_size_t(nb % 10);
     } else {
         my_putchar(nb + '0');
+        count++;
     }
+    return count;
 }

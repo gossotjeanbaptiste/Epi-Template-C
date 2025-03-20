@@ -17,7 +17,6 @@ int my_sort_int_array(int *tab, int size)
 {
     int i = 0;
     int j = 0;
-    int tmp = 0;
 
     while (i < size) {
         j = i + 1;

@@ -21,8 +21,6 @@ static int for_my_convert_num_to_str(int i, char *str)
 int my_convert_num_to_str(unsigned int num, char *str)
 {
     int i = 0;
-    int j;
-    char temp;
 
     if (num == 0) {
         str[i] = '0';
@@ -36,5 +34,5 @@ int my_convert_num_to_str(unsigned int num, char *str)
         num = num / 10;
     }
     str[i] = '\0';
-    for_my_convert_num_to_str(i, str);
+    return for_my_convert_num_to_str(i, str);
 }

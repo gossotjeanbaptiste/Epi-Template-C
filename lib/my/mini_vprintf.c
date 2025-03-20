@@ -7,14 +7,14 @@
 #include "my.h"
 #include <stdarg.h>
 
-static void mini_printf_handle_string(const char *format, va_list args)
+static void mini_printf_handle_string(va_list args)
 {
     char *str = va_arg(args, char *);
 
     my_putstr(str);
 }
 
-static void mini_printf_handle_integer(const char *format, va_list args)
+static void mini_printf_handle_integer(va_list args)
 {
     int num = va_arg(args, int);
 
@@ -60,10 +60,10 @@ void mini_printf_verification_switch(const char *format, va_list args, int i)
 {
     switch (format[i]) {
     case 's':
-        mini_printf_handle_string(format, args);
+        mini_printf_handle_string(args);
         break;
     case 'd':
-        mini_printf_handle_integer(format, args);
+        mini_printf_handle_integer(args);
         break;
     case 'c':
         mini_printf_handle_char(args);

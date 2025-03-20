@@ -21,7 +21,7 @@ static int count_format_specifiers(const char *format)
     return count;
 }
 
-static int count_arguments(va_list args, const char *format)
+static int count_arguments(const char *format)
 {
     int count = 0;
 
@@ -44,7 +44,7 @@ static int error_handler(const char *format, ...)
 
     va_start(args, format);
     format_specifiers_count = count_format_specifiers(format);
-    arguments_count = count_arguments(args, format);
+    arguments_count = count_arguments(format);
     va_end(args);
     if (format_specifiers_count != arguments_count) {
         my_putstr("Error: wrong format\n");

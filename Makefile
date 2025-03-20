@@ -10,6 +10,7 @@ PROJECT_NAME = project
 MY_LIB = -lmy
 CFLAGS = -Wall -Wextra -Wunused -Wimplicit -O3
 SRC = $(wildcard *.c) $(wildcard src/*.c)
+SRC_SEGV = $(wildcard *.c) $(wildcard src/*.c) $(wildcard lib/my/*.c)
 OBJ = $(SRC:.c=.o)
 INCL = -I include/
 LIB_COMP = -L ./ $(MY_LIB)
@@ -76,8 +77,7 @@ tests_run:
 		make fclean
 
 segfault:
-		make libmy.a
-		gcc -o $(PROJECT_NAME) -g $(SRC) $(INCL) $(LIB_COMP) $(CFLAGS)
+		gcc -o $(PROJECT_NAME) -g $(SRC_SEGV) $(INCL) $(CFLAGS)
 
 printf:
 		grep -Rn printf
