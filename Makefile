@@ -70,7 +70,7 @@ unit_tests: fclean
 			-L ./ -lmy -lcriterion --coverage
 
 
-tests_run:
+tests_run: unit_tests
 		./unit_tests
 		gcovr --exclude tests/
 		gcovr --exclude tests/ --branches
