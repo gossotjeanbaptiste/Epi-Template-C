@@ -29,6 +29,7 @@ int my_getnbr(char const *str);
 void my_isneg(int n);
 int my_is_prime(int nb);
 int my_isprint(int c);
+void *my_memset(void *ptr, int value, size_t size);
 int my_putchar(char c);
 int my_put_float(double nb, int precision);
 int my_put_hex(unsigned int nb, int is_upper, int precision);

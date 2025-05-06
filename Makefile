@@ -50,7 +50,7 @@ fclean: clean
 		rm -f unit_tests
 		rm -f *.out
 		rm -f *#
-		@echo "Everything has been cleaned, do make for have a \
+		@echo "Everything has been cleaned, do make to have a \
 new libmy and compilation"
 
 re: fclean all
