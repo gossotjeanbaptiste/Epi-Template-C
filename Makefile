@@ -5,6 +5,7 @@
 ## compiles libmy
 ##
 
+MAKEFLAGS += --no-print-directory
 LIB = libmy.a
 PROJECT_NAME = project
 MY_LIB = -lmy
